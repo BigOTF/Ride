@@ -26,3 +26,18 @@ body {
     background-position: cover;
     height: 100%;
 }
+
+.image5 {
+    background-image: url(../public/hero5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+
+.imageBD5 {
+    background-image: url(../public/heroBD5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: cover;
+    height: 100%;
+}

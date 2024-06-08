@@ -1,5 +1,7 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import carImage from '@/public/herocar.png'
 import hero3 from '@/public/hero3.png'
 import hero4 from '@/public/hero4.png'
@@ -12,6 +14,8 @@ import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { PiSeatbeltFill } from "react-icons/pi";
 
 const Home = () => {
+  const router = useRouter();
+
   return (
     <main className=''>
 
@@ -60,7 +64,7 @@ const Home = () => {
       </section>
      
 
-      <section className='mt-10 px-12 grid grid-cols-2 items-center'>
+      <section className='mt-10 px-20 grid grid-cols-2 items-center'>
         <div>
           <Image src={hero3} />
         </div>
@@ -69,15 +73,15 @@ const Home = () => {
 
           <div className='flex items-center gap-2'>
             <div className='w-12 h-[2px] bg-orange-700'></div>
-            <p className='text-orange-700 text-xl'>Who We Are</p>
+            <p className='text-orange-700 text-2xl'>Who We Are</p>
           </div>
 
-          <p className='text-gray-500 text-[1rem] leading-5'>
+          <p className='text-gray-500 text-[1rem] leading-6'>
             CRida is your reliable transportation partner, dedicated to ensuring safe and comfortable journeys. We create value by being proactive in maintaining quality fleet at reduced costs in order to provide efficient services by making sure we are at your service when needed. Meet our team and discover our commitment to excellence.
           </p>
 
           <div>
-            <button className='bg-purple-700 text-slate-100 hover:bg-purple-900 transition-all duration-500 px-3 py-2 rounded'>More About Us</button>
+            <button onClick={() => router.push('/About')} className='bg-purple-700 text-slate-100 hover:bg-purple-900 transition-all duration-500 px-3 py-2 rounded'>More About Us</button>
           </div>
 
         </div>
@@ -87,16 +91,19 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='mt-10 px-12 grid grid-cols-2 items-center'>
+      <section className='mt-20 flex gap-12 items-center'>
 
         <div>
-          <div className='flex flex-col gap-3'>
-            <div className='flex items-center gap-2'>
-              <div className='w-12 h-[2px] bg-orange-700'></div>
-              <p className='text-orange-700 text-xl'>Why Choose Us</p>
+          <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-2 pl-28'>
+              <div className='flex items-center gap-2'>
+                <div className='w-12 h-[2px] bg-orange-700'></div>
+                <p className='text-orange-700 text-2xl'>Why Choose Us</p>
+              </div>
+              
+              <p className='text-gray-500 text-[1rem] leading-6'>Choose CRida for unbeatable convenience, reliablility and affordability. Experience top-notch service with every ride.</p>
             </div>
-
-            <p>Choose CRida for unbeatable convenience, reliablility and affordability. Experience top-notch service with every ride.</p>
+           
 
             <div>
               <Image src={hero4} />
@@ -104,15 +111,100 @@ const Home = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-2'>
+        <div className='pr-28 grid grid-cols-2 gap-4 items-center'>
 
-          <div>
-            <IoMdClock />
-            <p className=''>24/7 Support</p>
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <IoMdClock className='text-orange-700 text-xl'/>
+              <p className='text-gray-950 font-semibold text-sm'>24/7 Support</p>
+            </div>
+
+            <p className='text-sm text-gray-600'>
+              Our round-the-clock customer support team is here to help, anytime, anywhere.
+            </p>
           </div>
+
+         
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <FaHandHoldingUsd className='text-orange-700 text-xl'/>
+              <p className='text-gray-950 font-semibold text-sm'>Affordable Pricing</p>
+            </div>
+
+            <p className='text-sm text-gray-600'>
+              Enjoy competitive rates without compromising on quality. Get the best value for your money with CRida.
+            </p>
+          </div>
+
+         
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <GiFlexibleStar className='text-orange-700 text-xl'/>
+              <p className='text-gray-950 font-semibold text-sm'>Flexible</p>
+            </div>
+
+            <p className='text-sm text-gray-600'>
+              Tailored solutions to suit your unique travel needs. Enjoy the flexibility you deserve. 
+            </p>
+          </div>
+
+         
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <FaCalendarAlt className='text-orange-700 text-xl'/>
+              <p className='text-gray-950 font-semibold text-sm'>Seamless Reservation</p>
+            </div>
+
+            <p className='text-sm text-gray-600'>
+              Book your ride in seconds with our user-friendly platform. Enjoy a hassle-free booking experience with CRida.
+            </p>
+          </div>
+
+         
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <IoShieldCheckmarkOutline className='text-orange-700 text-xl'/>
+              <p className='text-gray-950 font-semibold text-sm'>Insurance</p>
+            </div>
+
+            <p className='text-sm text-gray-600'>
+              Travel with confidence as all our vehicles are fully insured for your safety.
+            </p>
+          </div>
+
+         
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <PiSeatbeltFill className='text-orange-700 text-xl'/>
+              <p className='text-gray-950 font-semibold text-sm'>Clean and Safe Cars</p>
+            </div>
+
+            <p className='text-sm text-gray-600'>
+              Hygienic and well-maintained vehicles ensure a safe and comfortable journey with CRida.
+            </p>
+          </div>
+
+         
 
         </div>
 
+      </section>
+
+      <section className='mb-10'>
+        <div className='image5 h-[300px]'>
+          <div className='imageBD5 flex flex-col items-center pt-16 gap-3'>
+
+            <div className='flex items-center gap-2'>
+              <div className='w-12 h-[2px] bg-orange-700'></div>
+              <p className='text-orange-700 text-2xl'>Our Services</p>
+            </div>
+
+            <p className='text-gray-300 text-[1rem] leading-6 flex flex-col items-center'>
+              Explore the diverse range of transportation <span>solutions offered by CRida</span> 
+            </p>
+
+          </div>
+        </div>
       </section>
     
     </main>
