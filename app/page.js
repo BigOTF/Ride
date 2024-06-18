@@ -206,6 +206,25 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className='flex gap-7 mx-52 transform translate-y-[-130px]'>
+        <div className='bg-slate-100'>
+          <p className='bg-purple-700 text-slate-100 py-2 text-center'>Car Rentals</p>
+          <p className='px-3 pb-2 pt-5 text-gray-600'>Experience the freedom of exploring your destination at your own pace with CRida's car rental service. Choose from a variety of vehicles to suit your preferences and enjoy </p>
+        </div>
+        <div className='bg-slate-100'>
+          <p className='bg-purple-700 text-slate-100 py-2 text-center'>Car Sales</p>
+          <p className='px-3 pb-2 pt-5 text-gray-600'>Experience the freedom of exploring your destination at your own pace with CRida's car rental service. Choose from a variety of vehicles to suit your preferences and enjoy</p>
+        </div>
+        <div className='bg-slate-100'>
+          <p className='bg-purple-700 text-slate-100 py-2 text-center'>Car Sharing</p>
+          <p className='px-3 pb-2 pt-5 text-gray-600'>Planning a group trip or corporate event? CRida's bus rental service has you covered. From spacious coaches to comfortable mini busses, we provide reliable transportation</p>
+        </div>
+        <div className='bg-slate-100'>
+          <p className='bg-purple-700 text-slate-100 py-2 text-center'>Ride Hailing</p>
+          <p className='px-3 pb-2 pt-5 text-gray-600'>Take control of your travel itinerary with CRida's rent and self-drive options. Whether you're traveling for business or leisure, our fleet of well-maintained vehicles is available for</p>
+        </div>
+      </section>
     
     </main>
   )
