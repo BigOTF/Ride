@@ -6,15 +6,60 @@ import carImage from '@/public/herocar.png'
 import hero3 from '@/public/hero3.png'
 import hero4 from '@/public/hero4.png'
 
+import { exploreData } from '@/data/Explore'
+
 import { IoMdClock } from "react-icons/io";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { GiFlexibleStar } from "react-icons/gi";
 import { FaCalendarAlt } from "react-icons/fa";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { PiSeatbeltFill } from "react-icons/pi";
+import { BsFillPersonFill } from "react-icons/bs";
+import { FaToolbox } from "react-icons/fa6";
+import { IoIosSnow } from "react-icons/io";
+import { TbAutomaticGearbox } from "react-icons/tb";
+
 
 const Home = () => {
   const router = useRouter();
+
+const ExploreDataSection = () => {
+  return (
+    exploreData.map((data) => {
+      return (
+        <div key={data.id} className='bg-slate-100 shadow w-[32.2%]'>
+          <div>
+            <Image src={data.image}/>
+          </div>
+          <div className='px-3 py-4 flex flex-col gap-2'>
+            <p className='text-xl font-semibold text-black'>{data.name}</p>
+            <p className='text-black'>{data.price}</p>
+            <div className='flex items-center gap-3'>
+              <div>
+                <BsFillPersonFill className='text-purple-700'/>
+                <p className='text-sm text-gray-500'>{data.seat}</p>
+              </div>
+              <div>
+                <FaToolbox className='text-purple-700'/>
+                <p className='text-sm text-gray-500'>{data.package}</p>
+              </div>
+              <div>
+                <IoIosSnow className='text-purple-700'/>
+                <p className='text-sm text-gray-500'>{data.air}</p>
+              </div>
+              <div>
+                <TbAutomaticGearbox className='text-purple-700'/>
+                <p className='text-sm text-gray-500'>{data.tire}</p>
+              </div>
+            </div>
+            <div className='py-8'>
+              <button className='bg-purple-700 text-slate-100 px-8 py-3 rounded-lg hover:bg-purple-800 transform transition-all duration-500'>Book Now</button>
+            </div>
+          </div>
+        </div>
+      )
+    })
+)}
 
   return (
     <main className=''>
@@ -190,7 +235,7 @@ const Home = () => {
 
       </section>
 
-      <section className='mb-10'>
+      <section>
         <div className='image5 h-[300px]'>
           <div className='imageBD5 flex flex-col items-center pt-16 gap-3'>
 
@@ -207,23 +252,45 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='flex gap-7 mx-52 transform translate-y-[-130px]'>
+      <section className='flex gap-7 mx-52 translate-y-[-100px]'>
         <div className='bg-slate-100'>
           <p className='bg-purple-700 text-slate-100 py-2 text-center'>Car Rentals</p>
-          <p className='px-3 pb-2 pt-5 text-gray-600'>Experience the freedom of exploring your destination at your own pace with CRida's car rental service. Choose from a variety of vehicles to suit your preferences and enjoy </p>
+          <p className='px-3 pb-2 pt-5 text-gray-600 text-sm leading-[22px]'>Experience the freedom of exploring your destination at your own pace with CRida's car rental service. Choose from a variety of vehicles to suit your preferences and enjoy </p>
         </div>
         <div className='bg-slate-100'>
           <p className='bg-purple-700 text-slate-100 py-2 text-center'>Car Sales</p>
-          <p className='px-3 pb-2 pt-5 text-gray-600'>Experience the freedom of exploring your destination at your own pace with CRida's car rental service. Choose from a variety of vehicles to suit your preferences and enjoy</p>
+          <p className='px-3 pb-2 pt-5 text-gray-600 text-sm leading-[22px]'>Experience the freedom of exploring your destination at your own pace with CRida's car rental service. Choose from a variety of vehicles to suit your preferences and enjoy</p>
         </div>
         <div className='bg-slate-100'>
           <p className='bg-purple-700 text-slate-100 py-2 text-center'>Car Sharing</p>
-          <p className='px-3 pb-2 pt-5 text-gray-600'>Planning a group trip or corporate event? CRida's bus rental service has you covered. From spacious coaches to comfortable mini busses, we provide reliable transportation</p>
+          <p className='px-3 pb-2 pt-5 text-gray-600 text-sm leading-[22px]'>Planning a group trip or corporate event? CRida's bus rental service has you covered. From spacious coaches to comfortable mini busses, we provide reliable transportation</p>
         </div>
         <div className='bg-slate-100'>
           <p className='bg-purple-700 text-slate-100 py-2 text-center'>Ride Hailing</p>
-          <p className='px-3 pb-2 pt-5 text-gray-600'>Take control of your travel itinerary with CRida's rent and self-drive options. Whether you're traveling for business or leisure, our fleet of well-maintained vehicles is available for</p>
+          <p className='px-3 pb-2 pt-5 text-gray-600 text-sm leading-[22px]'>Take control of your travel itinerary with CRida's rent and self-drive options. Whether you're traveling for business or leisure, our fleet of well-maintained vehicles is available for</p>
         </div>
+      </section>
+
+      <section className='px-20 translate-y-[-30px]'>
+        <div className='flex justify-between'>
+
+          <div className='w-[30%] flex flex-col gap-2'>
+            <p className='text-black font-semibold text-2xl'>Explore Our Vehicles</p>
+            <p className='text-sm text-gray-700'>
+              Discover your ideal ride with CRida's diverse fleet. From sleek sedans to spacious SUVs and luxurious vans. 
+            </p>
+          </div>
+
+          <div className='mt-auto'>
+            <button className='bg-purple-700 text-slate-100 hover:bg-purple-900 transform transition-all duration-500 px-7 py-3 rounded'>See All Cars</button>
+          </div>
+
+        </div>
+
+        <div className='mt-10 flex flex-wrap gap-5'>
+          <ExploreDataSection />
+        </div>
+       
       </section>
     
     </main>
