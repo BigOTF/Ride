@@ -41,3 +41,18 @@ body {
     background-position: cover;
     height: 100%;
 }
+
+.exploreMain {
+    background-image: url(../public/exploreI.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+
+.exploreBD {
+    background-image: url(../public/exploreB.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: cover;
+    height: 100%;
+}

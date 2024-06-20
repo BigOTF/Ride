@@ -292,6 +292,10 @@ const ExploreDataSection = () => {
         </div>
        
       </section>
+
+      <section className='exploreMain h-[900px]'>
+        <div className='exploreBD'></div>
+      </section>
     
     </main>
   )
