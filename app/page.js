@@ -8,6 +8,7 @@ import hero4 from '@/public/hero4.png'
 import mail from '@/public/mail.svg'
 
 import { exploreData } from '@/data/Explore'
+import { TestimonialData } from '@/data/Testimonial'
 
 import { IoMdClock } from "react-icons/io";
 import { FaHandHoldingUsd } from "react-icons/fa";
@@ -19,50 +20,89 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { FaToolbox } from "react-icons/fa6";
 import { IoIosSnow } from "react-icons/io";
 import { TbAutomaticGearbox } from "react-icons/tb";
-import { FaRegStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa6";
 
 
 const Home = () => {
   const router = useRouter();
   const [email, setEmail] = useState("")
 
-const ExploreDataSection = () => {
-  return (
-    exploreData.map((data) => {
-      return (
-        <div key={data.id} className='bg-slate-100 shadow w-[32.2%]'>
-          <div>
-            <Image src={data.image}/>
-          </div>
-          <div className='px-3 py-4 flex flex-col gap-2'>
-            <p className='text-xl font-semibold text-black'>{data.name}</p>
-            <p className='text-black'>{data.price}</p>
-            <div className='flex items-center gap-3'>
-              <div>
-                <BsFillPersonFill className='text-purple-700'/>
-                <p className='text-sm text-gray-500'>{data.seat}</p>
+  const ExploreDataSection = () => {
+    return (
+      exploreData.map((data) => {
+        return (
+          <div key={data.id} className='bg-slate-100 shadow w-[32.2%]'>
+            <div>
+              <Image src={data.image}/>
+            </div>
+            <div className='px-3 py-4 flex flex-col gap-2'>
+              <p className='text-xl font-semibold text-black'>{data.name}</p>
+              <p className='text-black'>{data.price}</p>
+              <div className='flex items-center gap-3'>
+                <div>
+                  <BsFillPersonFill className='text-purple-700'/>
+                  <p className='text-sm text-gray-500'>{data.seat}</p>
+                </div>
+                <div>
+                  <FaToolbox className='text-purple-700'/>
+                  <p className='text-sm text-gray-500'>{data.package}</p>
+                </div>
+                <div>
+                  <IoIosSnow className='text-purple-700'/>
+                  <p className='text-sm text-gray-500'>{data.air}</p>
+                </div>
+                <div>
+                  <TbAutomaticGearbox className='text-purple-700'/>
+                  <p className='text-sm text-gray-500'>{data.tire}</p>
+                </div>
               </div>
-              <div>
-                <FaToolbox className='text-purple-700'/>
-                <p className='text-sm text-gray-500'>{data.package}</p>
-              </div>
-              <div>
-                <IoIosSnow className='text-purple-700'/>
-                <p className='text-sm text-gray-500'>{data.air}</p>
-              </div>
-              <div>
-                <TbAutomaticGearbox className='text-purple-700'/>
-                <p className='text-sm text-gray-500'>{data.tire}</p>
+              <div className='py-8'>
+                <button className='bg-purple-700 text-slate-100 px-8 py-3 rounded-lg hover:bg-purple-800 transform transition-all duration-500'>Book Now</button>
               </div>
             </div>
-            <div className='py-8'>
-              <button className='bg-purple-700 text-slate-100 px-8 py-3 rounded-lg hover:bg-purple-800 transform transition-all duration-500'>Book Now</button>
-            </div>
           </div>
-        </div>
-      )
-    })
-)}
+        )
+      })
+  )}
+
+  const TestimonialDataSection = () => {
+    return (
+      TestimonialData.map((data) => {
+        return (
+          <div key={data.id}>
+
+            <div className='bg-slate-100 px-4 pt-3 pb-6 flex flex-col gap-4'>
+              <div className='flex gap-3'>
+                <div>
+                  <Image src={data.image} />
+                </div>
+
+                <div className='flex flex-col gap-1'>
+                  <p className='text-gray-950 text-sm font-semibold tracking-wide'>{data.name}</p>
+                  <p className='text-sm text-gray-600'>{data.role}</p>
+                  <div className='flex items-center gap-1'>
+                    <FaStar className='text-orange-600 text-sm'/>
+                    <FaStar className='text-orange-600 text-sm'/>
+                    <FaStar className='text-orange-600 text-sm'/>
+                    <FaStar className='text-orange-600 text-sm'/>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <p className='text-gray-500 '>
+                "{data.comment}"
+              </p>
+            </div>
+
+            <div className='bg-gray-900 h-10'></div>
+
+
+          </div>
+        )
+      })
+    )
+  }
 
   return (
     <main className=''>
@@ -335,11 +375,15 @@ const ExploreDataSection = () => {
        
       </section>
 
-      <section>
-        <div>
-          <p>Testimonial</p>
-          <p>What Our Customers Are Saying</p>
-          <p>Here are some of our customers saying about our services.</p>
+      <section className='px-20 my-20 flex flex-col gap-10'>
+        <div className='flex flex-col items-center justify-center gap-3'>
+          <p className='text-orange-700 text-2xl'>Testimonial</p>
+          <p className='text-black font-semibold text-2xl tracking-wider'>What Our Customers Are Saying</p>
+          <p className='flex flex-wrap w-[30%] justify-center text-center text-gray-600'>Here are some of our customers saying about our services.</p>
+        </div>
+
+        <div className='flex gap-6'>
+          <TestimonialDataSection />
         </div>
       </section>
     
