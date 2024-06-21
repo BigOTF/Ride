@@ -1,10 +1,11 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import carImage from '@/public/herocar.png'
 import hero3 from '@/public/hero3.png'
 import hero4 from '@/public/hero4.png'
+import mail from '@/public/mail.svg'
 
 import { exploreData } from '@/data/Explore'
 
@@ -22,6 +23,7 @@ import { TbAutomaticGearbox } from "react-icons/tb";
 
 const Home = () => {
   const router = useRouter();
+  const [email, setEmail] = useState("")
 
 const ExploreDataSection = () => {
   return (
@@ -293,8 +295,51 @@ const ExploreDataSection = () => {
        
       </section>
 
-      <section className='exploreMain h-[900px]'>
+      <section className='exploreMain h-[520px]'>
         <div className='exploreBD'></div>
+      </section>
+
+      <section className='my-8 flex flex-col gap-4'>
+        <div className='px-20 flex flex-col gap-1'>
+          <p className='text-2xl font-semibold text-black underline tracking-wider'>CRida Services</p>
+          <p className='text-2xl font-semibold text-black underline tracking-wider'>Available all over Abuja F.C.T Nigeria</p>
+        </div>
+
+        <p className='px-3 text-gray-600 text-sm w-[70%]'>Need a safe and convenient way to get around Abuja? Look no further than CRida Services! We offer a variety of transportation options to fit your needs, all across the Federal Capital Territory.</p>
+       
+      </section>
+
+      <section className='mt-24 mb-10 mailColor mx-64 px-10'>
+        <div className='flex justify-between pt-8'>
+          <p className='text-black text-2xl font-semibold tracking-wide'>Subscribe for exclusive offers and deals&#x21;</p> 
+          <div className='flex justify-end'>
+            <Image src={mail}/>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-3 pb-14'>
+          <input className='w-full px-3 py-2 rounded mailColor border border-black'
+            type='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder='Email Address'
+
+          />
+          <div>
+            <button className='bg-purple-700 w-[100%] text-slate-100 py-3 rounded hover:bg-purple-900 transform transition-all duration-500'>
+              Sign Me Up
+            </button>
+          </div>
+        </div>
+       
+      </section>
+
+      <section>
+        <div>
+          <p>Testimonial</p>
+          <p>What Our Customers Are Saying</p>
+          <p>Here are some of our customers saying about our services.</p>
+        </div>
       </section>
     
     </main>
