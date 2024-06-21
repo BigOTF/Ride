@@ -19,6 +19,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { FaToolbox } from "react-icons/fa6";
 import { IoIosSnow } from "react-icons/io";
 import { TbAutomaticGearbox } from "react-icons/tb";
+import { FaRegStar } from "react-icons/fa";
 
 
 const Home = () => {
