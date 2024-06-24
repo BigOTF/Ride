@@ -10,7 +10,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className='py-16 footerBackground mt-12 text-slate-200 flex flex-col'>
+    <footer className='py-16 footerBackground  text-slate-200 flex flex-col'>
 
         <section className='px-20 flex justify-between gap-12'>
             <div className='flex flex-col gap-4 w-[20%]'>

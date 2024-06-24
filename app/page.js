@@ -22,8 +22,6 @@ import { FaToolbox } from "react-icons/fa6";
 import { IoIosSnow } from "react-icons/io";
 import { TbAutomaticGearbox } from "react-icons/tb";
 import { FaStar } from "react-icons/fa6";
-import { FaAngleDown } from "react-icons/fa";
-import { FaAngleUp } from 'react-icons/fa'
 
 const Home = () => {
   const router = useRouter();
@@ -100,24 +98,6 @@ const Home = () => {
             <div className='bg-gray-900 h-10'></div>
 
 
-          </div>
-        )
-      })
-    )
-  }
-
-  const FaqDataSection = () => {
-    return (
-      Faqs.map((data) => {
-        return (
-          <div key={data.id} className='flex items-center justify-between border-b border-black px-3 py-3'>
-            <div className='flex flex-col gap-2'>
-              <p>{data.question}</p>
-            </div>
-            <div>
-              <FaAngleDown className='cursor-pointer'/>
-            </div>
-           
           </div>
         )
       })
@@ -407,16 +387,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='px-20 flex flex-col gap-10'>
-        <p className='text-2xl font-semibold text-black text-center'>Frequently Asked Questions</p>
-
-        <div>
-          <FaqDataSection />
-        </div>
-      </section>
-
-      
-    
     </main>
   )
 }
